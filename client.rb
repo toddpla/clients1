@@ -1,14 +1,10 @@
 require 'socket'
-  server_address = ARGV[0]
-  socket = TCPSocket.new(server_address, 2345)
-  puts socket
 
-
-
-puts socket.gets
-puts "Wow what a rude server... I'm going to say Sarah"
+ARGV.empty? ? host = 'localhost' : host = ARGV[0].dup
+socket = TCPSocket.new(host, 2345)
   loop do
-    puts server_address
+    puts socket.gets
+    puts "Wow what a rude server...my name is"
     name = gets.chomp
     socket.puts name
     puts socket.gets
