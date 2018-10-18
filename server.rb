@@ -4,7 +4,6 @@ server = TCPServer.new(2345)
 
 loop do
   socket = server.accept
-
   loop do
     socket.puts "HELLO CLIENT WHAT IS YOUR NAME?"
     name = socket.gets.chomp
